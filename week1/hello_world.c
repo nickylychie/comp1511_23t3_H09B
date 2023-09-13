@@ -6,7 +6,9 @@
 
 int main(void) {
     
-    printf("Hello World\n");
+    printf(" /\\___/\\\n"
+           "(=' w '=) \n");
+
     return 0;
 }
 
@@ -36,8 +38,3 @@ int main(void) {
 
 
 
-// Change the code to print this cat
-/*  
- /\___/\
-(=' w '=)
- *
