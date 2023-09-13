@@ -5,7 +5,7 @@
 #include <stdio.h>
 
 int main(void) {
-    // printing a cat
+    
     printf("Hello World\n");
     return 0;
 }
@@ -40,4 +40,4 @@ int main(void) {
 /*  
  /\___/\
 (=' w '=)
- */
+ *
