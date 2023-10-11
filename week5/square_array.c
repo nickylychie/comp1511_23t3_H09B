@@ -27,7 +27,7 @@ int main(void) {
     printf("Values before square_array: ");
     print_array(size, inputs);
 
-    square_array(?);
+    square_array(inputs, size);
 
     printf("Values after square_array:  ");
     print_array(size, inputs);
@@ -41,9 +41,13 @@ int square(int x) {
 }
 
 // Squares all elements of an array, modifying the array in the process.
-? square_array(?) {
+void square_array(int inputs[MAX_SIZE], int size) {
     
-    // TODO
+    int i = 0;
+    while (i < size) {
+        inputs[i] = square(inputs[i]);
+        i++;
+    }
     
 }
 

@@ -24,6 +24,7 @@ int main(void) {
         {'O', 'X', 'O', 'O', 'O'},
         {' ', 'X', ' ', ' ', 'O'},
     };
+
     char o_wins_board[SIZE][SIZE] = {
         {'O', 'X', ' ', ' ', 'X'},
         {' ', 'X', ' ', ' ', ' '},
@@ -45,6 +46,45 @@ int main(void) {
 // Determines whether a given player has won the game of tictactoe
 // by getting SIZE tokens in a row, in any direction.
 int did_player_win(char player, char board[SIZE][SIZE]) {
-    // TODO Implement this function.
+    
+    // check if row or col won
+    int row_count = 0;
+    int col_count = 0;
+    for (int i = 0; i < SIZE; i++) {
+        for (int j = 0; j < SIZE; j++) {
+            if (board[i][j] == player) {
+                row_count++;
+            }
+            if (board[j][i] == player) {
+                col_count++;
+            }
+        }
+
+        if (row_count == 5 || col_count == 5) {
+            return true;
+        }
+
+        row_count = 0;
+        col_count = 0;
+    }
+
+    // check if diagonals won
+    int d_left_count = 0;
+    int d_right_count = 0;
+    for (int i = 0; i < SIZE; i++) {
+        for (int j = 0; j < SIZE; j++) {
+            if (board[i][i] == player) {
+                d_left_count++;
+            }
+            if (board[i][SIZE - i - 1] == player) {
+                d_right_count++;
+            }
+        }
+    }
+
+    if (d_left_count == 5 || d_right_count == 5) {
+        return true;
+    }
+
     return 0;
 }

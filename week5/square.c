@@ -3,6 +3,8 @@
 
 #include <stdio.h>
 
+int square(int x);
+
 int main(void) {
 
     int input;
@@ -11,13 +13,14 @@ int main(void) {
 
     printf("value before square: %d\n", input);
 
-    square(input);
+    input = square(input);
 
     printf("value after square: %d\n", input);
 
     return 0;
 }
 
-void square(int x) {
+int square(int x) {
     x = x * x;
+    return x;
 }
