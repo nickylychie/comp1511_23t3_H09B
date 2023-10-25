@@ -11,7 +11,7 @@ struct book {
     int year;
 };
 
-void modify_book(struct book book);
+void modify_book(struct book *book);
 
 int main() {
     struct book book;
@@ -23,7 +23,7 @@ int main() {
     printf("Before modification:\n");
     printf("Title: %s, Author: %s, Year: %d\n", book.title, book.author, book.year);
 
-    modify_book(book);
+    modify_book(&book);
 
     printf("After modification:\n");
     printf("Title: %s, Author: %s, Year: %d\n", book.title, book.author, book.year);
@@ -31,8 +31,8 @@ int main() {
     return 0;
 }
 
-void modify_book(struct book book) {
-    book.year = 1925;
-    strcpy(book.title, "The Great Gatsby");
-    strcpy(book.author, "F. Scott Fitzgerald");
+void modify_book(struct book *book) {
+    book->year = 1925;
+    strcpy(book->title, "The Great Gatsby");
+    strcpy(book->author, "F. Scott Fitzgerald");
 }

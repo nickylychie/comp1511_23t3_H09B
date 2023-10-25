@@ -7,9 +7,12 @@
 
 int main (void) {
 
-    char my_var;
-    while (scanf(" %c", &my_var) == 1) {
-        printf("Input: %c\n", my_var);
+    char my_var[MAX_LETTERS];
+
+    printf("What address does fgets return? %p", fgets(my_var, MAX_LETTERS, stdin));
+    
+    while (fgets(my_var, MAX_LETTERS, stdin) > 0) {
+        printf("Input: %s", my_var);
     }
 
     return 0;
