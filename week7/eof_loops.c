@@ -9,9 +9,11 @@ int main (void) {
 
     char my_var[MAX_LETTERS];
 
+    printf("Enter something: ");
     printf("What address does fgets return? %p", fgets(my_var, MAX_LETTERS, stdin));
     
-    while (fgets(my_var, MAX_LETTERS, stdin) > 0) {
+    printf("Scanning in until ctrl-d:\n")
+    while (fgets(my_var, MAX_LETTERS, stdin) != NULL) {
         printf("Input: %s", my_var);
     }
 
