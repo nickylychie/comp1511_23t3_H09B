@@ -32,6 +32,27 @@ int main(void) {
 // ======================== tut exercise here! =========================
 
 struct node *insert_3rd(struct node *head) {
+    struct node *new_node = create_new_node(5);
+
+    // check if list is empty
+    if (head == NULL) {
+        return new_node;
+    }
+
+    // find position to insert
+    int position = 1;
+    struct node *current = head;
+    while (position < 2 && current->next != NULL) {
+        current = current->next;
+        position++;
+    }
+
+    // insert
+    new_node->next = current->next;
+    current->next = new_node;
+
+    // return 
+    return head;
 }
 
 struct node *create_new_node(int value) {

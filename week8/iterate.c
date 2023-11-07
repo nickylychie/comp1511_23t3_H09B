@@ -33,7 +33,10 @@ int main(void) {
 
 // iterate through the given list
 void iterate_list(struct node *head) {
-   
+   struct node *current = head;
+   while (current != NULL) {
+        current = current->next;
+   }
 }
 
 // how can you change iterate_list to return the last node instead?

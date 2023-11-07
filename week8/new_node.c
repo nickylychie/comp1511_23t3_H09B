@@ -15,15 +15,18 @@ struct node {
 int main(void) {
 
     struct node *head = create_new_node(0);
-    struct node *current = head;
-
-    for (int i = 1; i < SIZE; i++) {
-        current->next = create_new_node(i);
-        current = current->next;
-    }
+    head->next = create_new_node(1);
 
     return 0;
 }
 
-// Write a funtion that takes in an int value,
-// and returns a pointer to a node containing that value
+Write a funtion that takes in an int value,
+creates a node using that value, 
+and returns a pointer to that node
+struct node *create_new_node(int value) {
+    struct node *new_node = malloc(sizeof(struct node));
+    new_node->data = value;
+    new_node->next = NULL;
+
+    return new_node;
+}
